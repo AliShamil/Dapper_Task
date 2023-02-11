@@ -1,0 +1,61 @@
+﻿<Window x:Class="Dapper_Task.Views.AddView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dapper_Task.Views"
+        mc:Ignorable="d"
+        Title="Add" MinHeight="488" MinWidth="497" Height="488" Width="497"  WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid >
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  Text="Product Name" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource CustomTxtBlockStyle}"/>
+            <TextBox Grid.Row="1"  Text="{Binding Product.Name,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource CustomTxtBoxStyle}" />
+
+            <TextBlock Grid.Row="2"  Text="Origin Country" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource CustomTxtBlockStyle}"/>
+            <TextBox Grid.Row="3"  Text="{Binding Product.Country,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource CustomTxtBoxStyle}"/>
+
+
+
+            <TextBlock Grid.Row="4"  Text="Price" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource CustomTxtBlockStyle}"/>
+            <TextBox Grid.Row="5" Text="{Binding Product.Price,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource CustomTxtBoxStyle}"/>
+
+            <TextBlock Grid.Row="6" Text="Quantity" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource CustomTxtBlockStyle}"/>
+            <TextBox Grid.Row="7"  Text="{Binding Product.Quantity,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource CustomTxtBoxStyle}"/>
+
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <Button
+                Style="{StaticResource CustomBtnStyle}"
+                
+                Content="Add" 
+                Click="Btn_Add_Click"/>
+
+                <Button
+                Grid.Column="1"
+                Style="{StaticResource CustomBtnStyle}"
+
+                Content="Cancel"
+                Click="Btn_Cancel_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
